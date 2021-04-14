@@ -22,4 +22,8 @@ class TweetRepositoryImpl: TweetRepository {
         )
     }
 
+    override fun deleteById(id: String) {
+        print("delete tweet by id: $id")
+    }
+
 }
