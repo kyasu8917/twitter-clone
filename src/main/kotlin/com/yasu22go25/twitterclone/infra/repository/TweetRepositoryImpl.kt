@@ -2,8 +2,7 @@ package com.yasu22go25.twitterclone.infra.repository
 
 import com.yasu22go25.twitterclone.domain.model.Tweet
 import com.yasu22go25.twitterclone.domain.value.UserId
-import com.yasu22go25.twitterclone.infra.repository.`interface`.TweetRepository
-import org.apache.catalina.User
+import com.yasu22go25.twitterclone.infra.repository.interfaces.TweetRepository
 import org.springframework.stereotype.Repository
 import java.util.*
 

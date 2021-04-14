@@ -1,4 +1,4 @@
-package com.yasu22go25.twitterclone.usecase.dto
+package com.yasu22go25.twitterclone.usecase.tweet.dto
 
 import java.util.*
 

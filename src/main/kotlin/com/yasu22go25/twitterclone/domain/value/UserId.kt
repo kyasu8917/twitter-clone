@@ -6,5 +6,4 @@ data class UserId(
     val value: String
 ) {
     constructor(): this(UUID.randomUUID().toString())
-    constructor(id: String): this(id)
 }

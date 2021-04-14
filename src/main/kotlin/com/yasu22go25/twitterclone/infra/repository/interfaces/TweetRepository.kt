@@ -1,4 +1,4 @@
-package com.yasu22go25.twitterclone.infra.repository.`interface`
+package com.yasu22go25.twitterclone.infra.repository.interfaces
 
 import com.yasu22go25.twitterclone.domain.model.Tweet
 

@@ -1,9 +1,8 @@
-package com.yasu22go25.twitterclone.controller.dto.request
+package com.yasu22go25.twitterclone.usecase.user.dto
 
-import com.yasu22go25.twitterclone.domain.value.UserId
 import java.util.*
 
-data class PostUserRequestParameter(
+data class PostUserUseCaseDto(
     val screenName: String,
     val customUserId: String,
     val createAt: Date,
