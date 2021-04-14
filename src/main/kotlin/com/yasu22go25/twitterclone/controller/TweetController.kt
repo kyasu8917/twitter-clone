@@ -19,16 +19,7 @@ class TweetController(
     @GetMapping(path = ["/{tweetId}"])
     fun get(@PathVariable("tweetId") tweetId: String): TweetResponse {
         val tweet = getTweetUseCase.get(tweetId) ?: throw NotFoundException()
-
-        return TweetResponse(
-                id = tweet.id,
-                userId = tweet.userId.value,
-                createAt = tweet.createAt.toString(),
-                text = tweet.text,
-                favorites = tweet.favorites.map { it.value },
-                retweeted = tweet.retweeted.map { it.value }
-        )
-
+        return TweetResponse(tweet)
     }
 
     @PostMapping
@@ -39,18 +30,8 @@ class TweetController(
             text = parameters.text,
             createAt = parameters.createAt
         )
-
-        val domain = postTweetUseCase.postTweet(dto, userId)
-
-        return TweetResponse(
-            id = domain.id,
-            userId = domain.userId.value,
-            createAt = domain.createAt.toString(),
-            text = domain.text,
-            favorites = domain.favorites.map { it.value },
-            retweeted = domain.retweeted.map { it.value }
-        )
-
+        val tweet = postTweetUseCase.postTweet(dto, userId)
+        return TweetResponse(tweet)
     }
 
 }
