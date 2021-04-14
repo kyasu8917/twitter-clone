@@ -3,6 +3,7 @@ package com.yasu22go25.twitterclone.controller
 import com.yasu22go25.twitterclone.controller.dto.request.PostTweetRequestParameter
 import com.yasu22go25.twitterclone.controller.dto.response.TweetResponse
 import com.yasu22go25.twitterclone.controller.exception.NotFoundException
+import com.yasu22go25.twitterclone.domain.exception.DomainValidationError
 import com.yasu22go25.twitterclone.usecase.tweet.interfaces.DeleteTweetUseCase
 import com.yasu22go25.twitterclone.usecase.tweet.interfaces.GetTweetUseCase
 import com.yasu22go25.twitterclone.usecase.tweet.interfaces.PostTweetUseCase
@@ -32,7 +33,9 @@ class TweetController(
             text = parameters.text,
             createAt = parameters.createAt
         )
+
         val tweet = postTweetUseCase.postTweet(dto, userId)
+
         return TweetResponse(tweet)
     }
 

@@ -1,8 +1,6 @@
 package com.yasu22go25.twitterclone.controller.dto.response
 
 import com.yasu22go25.twitterclone.domain.model.User
-import com.yasu22go25.twitterclone.domain.value.UserId
-import java.util.*
 
 data class UserResponse(
     val id: String,

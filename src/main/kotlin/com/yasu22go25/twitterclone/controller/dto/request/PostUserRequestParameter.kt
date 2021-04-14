@@ -1,6 +1,5 @@
 package com.yasu22go25.twitterclone.controller.dto.request
 
-import com.yasu22go25.twitterclone.domain.value.UserId
 import java.util.*
 
 data class PostUserRequestParameter(
