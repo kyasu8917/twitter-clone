@@ -21,7 +21,7 @@ class PostUserUseCaseImpl(
             screenName = dto.screenName,
             customUserId = dto.customUserId,
             createAt = dto.createAt,
-            email = dto.email,
+            email = Emaildto.email,
             birthDay = dto.birthDay,
             iconUrl = dto.iconUrl,
             headerUrl = dto.headerUrl,
