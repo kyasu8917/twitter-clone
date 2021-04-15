@@ -14,13 +14,13 @@ class PostTweetUseCaseImpl(
     val repository: TweetRepository
 ): PostTweetUseCase {
 
-    override fun postTweet(dto: PostTweetUseCaseDto, userId: String): Tweet {
+    override fun postTweet(dto: PostTweetUseCaseDto): Tweet {
 
         print("usecase dto: $dto")
 
         val domain = Tweet(
             id = UUID.randomUUID().toString(),
-            userId = UserId(userId),
+            userId = UserId(dto.userId),
             createAt = dto.createAt,
             text = dto.text,
             favorites = listOf(),
