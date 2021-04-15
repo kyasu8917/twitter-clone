@@ -6,7 +6,7 @@ import org.springframework.stereotype.Component
 class Base64Validator {
 
     fun validate(base64: String): Boolean {
-        val regex = Regex("data:.*/.*;base64,.*")
+        val regex = Regex("data:.+/.+;base64,.+")
         return regex.containsMatchIn(base64)
     }
 

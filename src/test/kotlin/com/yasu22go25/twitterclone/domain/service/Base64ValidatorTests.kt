@@ -50,4 +50,44 @@ class Base64ValidatorTests {
 
         assertThat(actual, `is`(expected))
     }
+
+    @Test
+    @DisplayName(":の後が空文字の場合、False")
+    fun testFailureForNoCharAfterColon() {
+        val expected = false
+        val text = "data:/jpeg;base64,AAAAAAAABBBBBBBBCCCCCCCCDDDDDDDDEEEEEEEEFFFFFFFFGGGGGGGGG"
+        val actual = validator.validate(text)
+
+        assertThat(actual, `is`(expected))
+    }
+
+    @Test
+    @DisplayName("/の後が空文字の場合、False")
+    fun testFailureForNoCharAfterSlash() {
+        val expected = false
+        val text = "data:image/;base64,AAAAAAAABBBBBBBBCCCCCCCCDDDDDDDDEEEEEEEEFFFFFFFFGGGGGGGGG"
+        val actual = validator.validate(text)
+
+        assertThat(actual, `is`(expected))
+    }
+
+    @Test
+    @DisplayName(";の後が空文字の場合、False")
+    fun testFailureForNoCharAfterSemiColon() {
+        val expected = false
+        val text = "data:image/jpeg;,AAAAAAAABBBBBBBBCCCCCCCCDDDDDDDDEEEEEEEEFFFFFFFFGGGGGGGGG"
+        val actual = validator.validate(text)
+
+        assertThat(actual, `is`(expected))
+    }
+
+    @Test
+    @DisplayName(",の後が空文字(データ部分が無い）の場合、False")
+    fun testFailureForNoCharAfterComma() {
+        val expected = false
+        val text = "data:image/jpeg;base64,"
+        val actual = validator.validate(text)
+
+        assertThat(actual, `is`(expected))
+    }
 }
