@@ -21,7 +21,7 @@ data class UserResponse(
         domain.screenName,
         domain.customUserId,
         domain.createAt.toString(),
-        domain.email,
+        domain.email.value,
         domain.birthDay.toString(),
         domain.iconUrl,
         domain.headerUrl,

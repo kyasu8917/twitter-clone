@@ -1,6 +1,7 @@
 package com.yasu22go25.twitterclone.usecase.user
 
 import com.yasu22go25.twitterclone.domain.model.User
+import com.yasu22go25.twitterclone.domain.value.Email
 import com.yasu22go25.twitterclone.domain.value.UserId
 import com.yasu22go25.twitterclone.infra.repository.interfaces.UserRepository
 import com.yasu22go25.twitterclone.usecase.user.dto.PostUserUseCaseDto
@@ -21,7 +22,7 @@ class PostUserUseCaseImpl(
             screenName = dto.screenName,
             customUserId = dto.customUserId,
             createAt = dto.createAt,
-            email = Emaildto.email,
+            email = Email(dto.email),
             birthDay = dto.birthDay,
             iconUrl = dto.iconUrl,
             headerUrl = dto.headerUrl,
