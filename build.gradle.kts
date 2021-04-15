@@ -24,10 +24,11 @@ dependencies {
     runtimeOnly("com.h2database:h2")
 
     testImplementation("org.junit.jupiter:junit-jupiter:5.5.2")
+    testImplementation("org.springframework.boot:spring-boot-starter-test")
 }
 
 tasks.test {
-    useJUnit()
+    useJUnitPlatform()
 }
 
 tasks.withType<KotlinCompile>() {
