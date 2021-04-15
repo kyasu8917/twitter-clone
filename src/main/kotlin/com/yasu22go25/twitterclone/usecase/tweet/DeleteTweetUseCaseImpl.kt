@@ -6,13 +6,12 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class DeleteTweetUseCaseImpl: DeleteTweetUseCase {
-
-    @Autowired
-    private lateinit var repoitory: TweetRepository
+class DeleteTweetUseCaseImpl(
+    val repository: TweetRepository
+): DeleteTweetUseCase {
 
     override fun deleteById(tweetId: String) {
-        repoitory.deleteById(tweetId)
+        repository.deleteById(tweetId)
     }
 
 }

@@ -10,10 +10,9 @@ import org.springframework.stereotype.Component
 import java.util.*
 
 @Component
-class PostTweetUseCaseImpl: PostTweetUseCase {
-
-    @Autowired
-    private lateinit var repository: TweetRepository
+class PostTweetUseCaseImpl(
+    val repository: TweetRepository
+): PostTweetUseCase {
 
     override fun postTweet(dto: PostTweetUseCaseDto, userId: String): Tweet {
 

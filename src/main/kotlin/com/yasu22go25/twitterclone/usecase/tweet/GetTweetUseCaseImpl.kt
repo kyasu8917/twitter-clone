@@ -7,10 +7,9 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class GetTweetUseCaseImpl: GetTweetUseCase {
-
-    @Autowired
-    private lateinit var repository: TweetRepository
+class GetTweetUseCaseImpl(
+    val repository: TweetRepository
+): GetTweetUseCase {
 
     override fun get(tweetId: String): Tweet? {
         return repository.findById(tweetId)

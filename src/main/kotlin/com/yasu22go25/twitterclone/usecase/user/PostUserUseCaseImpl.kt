@@ -9,10 +9,9 @@ import org.springframework.beans.factory.annotation.Autowired
 import org.springframework.stereotype.Component
 
 @Component
-class PostUserUseCaseImpl: PostUserUseCase {
-
-    @Autowired
-    private lateinit var repository: UserRepository
+class PostUserUseCaseImpl(
+    val repository: UserRepository
+): PostUserUseCase {
 
     override fun post(dto: PostUserUseCaseDto): User {
         print("post user dto: $dto")
