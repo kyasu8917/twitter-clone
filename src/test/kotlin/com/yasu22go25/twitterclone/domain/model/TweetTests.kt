@@ -1,7 +1,6 @@
-package com.yasu22go25.twitterclone.domain
+package com.yasu22go25.twitterclone.domain.model
 
 import com.yasu22go25.twitterclone.domain.exception.DomainValidationError
-import com.yasu22go25.twitterclone.domain.model.Tweet
 import com.yasu22go25.twitterclone.domain.value.UserId
 import org.junit.jupiter.api.DisplayName
 import org.junit.jupiter.api.Test
