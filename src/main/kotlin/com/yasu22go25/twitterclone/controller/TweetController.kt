@@ -34,7 +34,7 @@ class TweetController(
             createAt = parameters.createAt
         )
 
-        val tweet = postTweetUseCase.postTweet(dto, userId)
+        val tweet = postTweetUseCase.postTweet(dto)
 
         return TweetResponse(tweet)
     }
